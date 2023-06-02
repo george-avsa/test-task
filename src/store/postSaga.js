@@ -11,7 +11,7 @@ const getPostComment = (postId) => axios.get(`https://jsonplaceholder.typicode.c
 
 const delay = time => new Promise(resolve => setTimeout(resolve, time));
 
-function* fetchPostWorker () {
+export function* fetchPostWorker () {
     const postsResponse = yield call(getPosts);
     const usersResponse = yield call(getComments);
     yield call(delay, 500);
@@ -36,7 +36,7 @@ function* fetchPostWorker () {
     yield put(setPosts(posts));
 }
 
-function* getPostCommentsWorker({payload}) {
+export function* getPostCommentsWorker({payload}) {
     try {
         const commentsResponse = yield call(getPostComment, payload);
         yield call(delay, 500);
@@ -44,9 +44,4 @@ function* getPostCommentsWorker({payload}) {
     } catch (e) {
         
     }
-}
-
-export function* useWatcher () {
-    yield takeEvery('FETCH_POSTS', fetchPostWorker);
-    yield takeEvery('GET_COMMENTS', getPostCommentsWorker);
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Comment } from "./Comment";
 
 export function CommentList({comments}) {

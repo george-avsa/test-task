@@ -4,6 +4,7 @@ import { Post } from './components/Post';
 import { Posts } from './pages/Posts';
 import { Navigation } from './components/Navigation';
 import { UserDetials } from './pages/UserDetails';
+import { User } from './components/User';
 
 
 function App() {
