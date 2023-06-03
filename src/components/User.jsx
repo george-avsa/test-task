@@ -41,7 +41,7 @@ export function User({
                         
                         <Col sm="12" md="4">
                             <Stack direction="vertical" className="show-comments">
-                                <Link to={postId ? `#${postId}` : '/'}><Card.Link style={{cursor: 'pointer'}} >Go back to post {`>`}</Card.Link></Link>
+                                <Link to={postId ? `/#${postId}` : '/'}><Card.Link style={{cursor: 'pointer'}} >Go back to post {`>`}</Card.Link></Link>
                                 <Card.Link style={{cursor: 'pointer', flexGrow:1,}} onClick={() => handleUsersPosts()}>Show posts</Card.Link>
                             </Stack>
                         </Col>
