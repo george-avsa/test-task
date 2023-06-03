@@ -1,8 +1,7 @@
-import { Card, Col, Container, Row, Spinner, Stack } from "react-bootstrap";
+import { Card, Col, Container, Row} from "react-bootstrap";
 import { getComments, toggleVisibility } from "../store/postReducer";
 import { useDispatch } from "react-redux";
 import { CommentList } from "./CommentList";
-import { useEffect } from "react";
 import { Loader } from "./Loader";
 import authorIcon from "./../images/authorIcon.svg";
 import { Link } from "react-router-dom";
@@ -33,7 +32,7 @@ export function Post(props) {
                     <Container>
                         <Row>
                             <Col sm="12" md="6">
-                                <Link to={`/user/${props.userId}/${props.id}`} style={{textDecoration: 'none', color: '#000'}}>
+                                <Link to={`user/${props.userId}/${props.id}`} style={{textDecoration: 'none', color: '#000'}}>
                                     <Card.Text style={{opacity: .5, fontSize: '.8rem',}}>
                                         <img src={authorIcon} style={{width: "15px", marginRight: "5px"}}></img>
                                         <span>Author: {props.authorName}</span>

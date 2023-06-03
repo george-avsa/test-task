@@ -1,7 +1,6 @@
 
 import { call, put } from "redux-saga/effects";
 import { setUsers, setUsersPosts } from "./usersReducer";
-import { store } from ".";
 import { setFetchError } from "./settingsReducer";
 
 

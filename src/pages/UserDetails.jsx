@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { User } from "../components/User";
-import { fetchPosts, fetchUsersPosts, toggleVisibility } from "../store/usersReducer";
+import { fetchPosts} from "../store/usersReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { Loader } from "../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
-import { Container } from "react-bootstrap";
 
 
 export function UserDetials() {

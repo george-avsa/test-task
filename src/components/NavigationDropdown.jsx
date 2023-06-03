@@ -16,7 +16,7 @@ export function NavigationDropdown() {
         <Nav>
             <Container style={{textAlign: "right"}} onClick={() => hadleDropdown()}>
                 <Nav.Link style={{paddingRight: 0}}><Link to="/">Posts</Link></Nav.Link>
-                <Nav.Link style={{paddingRight: 0}}><Link to="/aboutme">About me</Link></Nav.Link>
+                <Nav.Link style={{paddingRight: 0}}><Link to="aboutme">About me</Link></Nav.Link>
                 <Nav.Link style={{paddingRight: 0}}><Link to="/user/1">Users</Link></Nav.Link>
             </Container>
         </Nav>

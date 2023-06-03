@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 import burger from "./../images/burger.svg";
 import { NavigationDropdown } from "./NavigationDropdown";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,9 +1,8 @@
-import { Card, Col, Container, Row, Spinner, Stack } from "react-bootstrap";
-import { getComments, toggleVisibility } from "../store/postReducer";
+import { Card, Col, Container, Row, Stack } from "react-bootstrap";
+import {  toggleVisibility } from "../store/postReducer";
 import { fetchUsersPosts } from "../store/usersReducer";
 import { useDispatch } from "react-redux";
 import { CommentList } from "./CommentList";
-import { useEffect } from "react";
 import { Loader } from "./Loader";
 import { Link } from "react-router-dom";
 
@@ -42,7 +41,7 @@ export function User({
                         
                         <Col sm="12" md="4">
                             <Stack direction="vertical" className="show-comments">
-                                <Link to={postId ? `/#${postId}` : '/'}><Card.Link style={{cursor: 'pointer'}} >Go back to post {`>`}</Card.Link></Link>
+                                <Link to={postId ? `#${postId}` : '/'}><Card.Link style={{cursor: 'pointer'}} >Go back to post {`>`}</Card.Link></Link>
                                 <Card.Link style={{cursor: 'pointer', flexGrow:1,}} onClick={() => handleUsersPosts()}>Show posts</Card.Link>
                             </Stack>
                         </Col>
