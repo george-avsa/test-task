@@ -19,7 +19,7 @@ export function Navigation() {
         <>
         <Navbar>
             <Container style={{display: "flex", alignItems: "center"}}>
-                <Navbar.Brand>Posts</Navbar.Brand>
+                <Navbar.Brand>Test task</Navbar.Brand>
                     <img src={burger} style={{width: '20px'}} onClick={() => hadleDropdown()}/>
             </Container>
         </Navbar>

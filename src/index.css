@@ -1,3 +1,31 @@
 .card:not(:first-child), .post:not(:first-child) {
   margin-top: 1rem;
 }
+
+.show-comments {
+  text-align: right;
+}
+
+.vstack {
+  height: 100%;
+}
+
+.show-comments .card-link {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+  .show-comments {
+    text-align: left;
+  }
+
+  .user-card .row > div:not(:first-child) {
+    margin-top: 50px;
+  }
+
+  .show-comments .card-link {
+    justify-content: flex-start;
+  }
+}

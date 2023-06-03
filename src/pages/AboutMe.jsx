@@ -4,7 +4,7 @@ import gogi from "./../images/gogi.png"
 export function AboutMe() {
     return (
         <Container>
-            <img src={gogi} style={{width: '300px', float:'left', padding: '0 20px 20px 0'}}></img>
+            <img src={gogi} style={{maxWidth: '400px', width: '100%', float:'left', padding: '0 20px 20px 0'}}></img>
             <p>Добро пожаловать! Это небольшое приложение - тестовое задание, и на этой странице я хочу немного рассказать о себе.</p>
             <p>Меня зовут Авсаджанишвили Георгий (Гоги), я веб-разработчик, сейчас работаю в основном с фронтендом. </p>
             <p>С вебом я начал знакомиться еще в старшей школе, но делал небольшие сайты, использовал только HTML, CSS. </p>
