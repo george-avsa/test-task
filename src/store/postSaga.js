@@ -1,7 +1,6 @@
 
 import { call, put } from "redux-saga/effects";
 import { setComments, setPosts } from "./postReducer";
-import { takeEvery } from "redux-saga/effects";
 import axios from "axios";
 
 

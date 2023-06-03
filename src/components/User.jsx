@@ -5,16 +5,21 @@ import { useDispatch } from "react-redux";
 import { CommentList } from "./CommentList";
 import { useEffect } from "react";
 import { Loader } from "./Loader";
+import { Link } from "react-router-dom";
 
 export function User({
-    user
+    user,
+    id,
+    postId
 }) {
 
     const dispatch = useDispatch();
 
     function handleUsersPosts() {
         dispatch(toggleVisibility());
-        dispatch(fetchUsersPosts(3));
+        if (!user.posts.length) {
+            dispatch(fetchUsersPosts(id));
+        }
     }
 
     return (
@@ -34,12 +39,12 @@ export function User({
                 </div>
                 
                 <div style={{"flexGrow": 1, display: 'flex', flexDirection:'column', justifyContent: 'space-between', alignItems: 'flex-end'}}>
-                    <Card.Link style={{cursor: 'pointer'}}>Go back to post {`>`}</Card.Link>
+                    <Link to={postId ? `/#${postId}` : '/'}><Card.Link style={{cursor: 'pointer'}}>Go back to post {`>`}</Card.Link></Link>
                     <Card.Link style={{cursor: 'pointer'}} onClick={() => handleUsersPosts()}>Show posts</Card.Link>
                 </div>
             </Card.Body>
             <Card.Body>
-                {!!user.posts.length && <CommentList comments={user.posts}></CommentList>}
+                {(!!user.posts.length && !user.postsHidden) && <CommentList comments={user.posts}></CommentList>}
                 {(user.postLoaded && !user.postsHidden) && <Loader></Loader>}
             </Card.Body>
         </Card>

@@ -5,6 +5,7 @@ import { CommentList } from "./CommentList";
 import { useEffect } from "react";
 import { Loader } from "./Loader";
 import authorIcon from "./../images/authorIcon.svg";
+import { Link } from "react-router-dom";
 
 export function Post(props) {
 
@@ -22,19 +23,19 @@ export function Post(props) {
     // useEffect(() => console.log(props.commentsList), [props.commentsList])
 
     return (
-        <Card style={{marginLeft: "3em", marginRight: "3em"}}>
+        <Card style={{marginLeft: "3em", marginRight: "3em"}} id={props.id}>
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>
                 <Card.Text>
                     {props.body}
                 </Card.Text>
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <a href="#" style={{textDecoration: 'none', color: '#000'}}>
+                    <Link to={`/user/${props.userId}/${props.id}`} style={{textDecoration: 'none', color: '#000'}}>
                         <Card.Text style={{opacity: .5, fontSize: '.8rem', display: 'flex', alignItems:'center'}}>
                             <img src={authorIcon} style={{width: "15px", marginRight: "5px"}}></img>
                             <span>Author: {props.authorName}</span>
                         </Card.Text>
-                    </a>
+                    </Link>
                     <Card.Link 
                         style={{fontSize: '.8rem', cursor: 'pointer'}} 
                         data-id={props.id} onClick={(e) => hadleCommentsClick(e)}
